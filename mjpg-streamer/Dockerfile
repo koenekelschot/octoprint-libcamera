@@ -9,7 +9,7 @@ RUN curl "https://archive.raspberrypi.org/debian/raspberrypi.gpg.key" | apt-key 
 
 RUN apt-get update && apt-get install -y libcamera-dev libjpeg-dev libgphoto2-dev
 
-RUN git clone https://github.com/ArduCAM/mjpg-streamer.git /src
+RUN git clone https://github.com/ArduCAM/mjpg-streamer.git /src && cd /src && git checkout 0c03adde834bbd949bfa8f78f89a0b305d8001fe 
 WORKDIR /src/mjpg-streamer-experimental
 
 RUN sed -i "/input_libcamera/p;/input_/d;/output_http/p;/output_/d" CMakeLists.txt
