@@ -10,7 +10,7 @@ services:
     ports:
       - 8080:8080
     environment:
-      - INPUT_FLAGS=-r 1920x1080 -f 30
+      - INPUT_FLAGS=--resolution 1920x1080 --fps 60 --rotation 0 -afmode continuous
       - OUTPUT_FLAGS=-w ./www
     volumes:
       - /run/udev:/run/udev:ro
